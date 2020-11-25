@@ -1,16 +1,28 @@
-<h1 class="centering">Registrace</h1>
+<head>
+<link rel="stylesheet" href="{{url_for('static', filename='loginstyle.css')}}">
+</head>
+
 <form action="{{url_for('register')}}" method="POST">
- <input type="text" name='username'>
- <br>
- <br>
- <input type="password" name='password'>
- <br>
- <br>
- <input type="password" name='password2'>
- <br>
- <br>
- <input type="submit" value="Submit">
- <p style="color:red;">{{error}}</p>
+  <h1>Velmi pěkná registrace:</h1>
+  <div class="inset">
+  <p>
+    <label for="email">Jméno</label>
+    <input type="text" name='username'>
+  </p>
+  <p>
+    <label for="password">Heslo:</label>
+    <input type="password" name="password">
+  </p>
+  <p>
+    <label for="password">Opakuj heslo:</label>
+    <input type="password" name='password2'>
+  </p>
+  <p>
+    {{error}}
+  </p>
+  </div>
+  <p class="p-container">
+    <span><a href="{{url_for('index')}}">Zpět home</a></span>
+    <input type="submit" value="Registrovat">
+  </p>
 </form>
-<a href="{{url_for('index')}}">Domů </a>
-    

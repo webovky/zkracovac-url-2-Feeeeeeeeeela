@@ -5,4 +5,4 @@
 
 ## Budoucí úpravy:
 * **Dodělat samotný zkracovač**
-* Upravit vzhled přihlášení a registraci
+* v loginu vytvořit tlačítko pro register a naopak
