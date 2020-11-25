@@ -4,5 +4,5 @@
 * bez přihlášení funguje base a info
 
 ## Budoucí úpravy:
-* Dodělat samotný zkracovač
+* **Dodělat samotný zkracovač**
 * Upravit vzhled přihlášení a registraci
