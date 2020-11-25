@@ -1,63 +1,158 @@
+.hlavnitext {background-color: #00BFFF;
+        border: #0000CD 2px solid;
+        width: 1200px;
+        font-size: 17pt;
+        font-family:Comic Sans MS, Comic Sans, cursive;
+        margin: auto;
+        text-align: center;
+        text-indent: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        }
+
+.bocnitext {background-color: #00BFFF;
+            border: #0000CD 2px solid;
+            font-family:Comic Sans MS, Comic Sans, cursive;
+            width: 130px;
+            font-size: 17pt;
+            text-align: center;
+            color: #7FFF00	;
+            font-weight: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            }
+a {
+    text-decoration: none;
+}
+.centering {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.zluta {
+    background-color: yellow;
+}
+
+.name {
+ text-align: right;
+ color: white;
+ margin-top: 15px;
+}
+
+
+
+
+
+/*Duhový text*/
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
 body {
-  background-color: #eeeeee;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-left: 90px;
-  margin-right: 90px; }
-
-h1, h2, h3 {
-  clear: both;
-  margin-top: 3em;
+  background-color:#607D8B;
 }
 
-h1 a {
-  color: #bb8800; 
+.container{
+  background-color:#E0F2F1;
+  padding:10px;
+  border-radius:15px;
+  box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
 }
 
-nav ul {
-  margin: 1ex auto;
-  margin-left: 150px;
-  /* text-align: center; */
-  font-weight: bold; }
-  nav ul li {
-    display: block;
-    width: 30%;
-    margin-top: 1ex;
-    }
-    nav ul li a {
-      display: block;
-      color: white;
-      background-color: #324b79;
-      border-radius: 25px 50px 0px;
-      padding: 1ex 2ex; }
-    nav ul li a:hover {
-      color: #324b72;
-      background-color: white;
-    }
-  nav img {
-    float:left;
-  }
-
-footer {
-  padding: 0.1ex 2em;
-  margin-top: 2em;
-  border-top: solid 2px #FACC15;
-  background-color: #ecc8f0; }
-
-.login {
-  display: inline-block;
-  float: right;
-  width: 30%;
-  border: orange solid 2px;
-  padding: 1ex; }
-  
-.odd {
-    background-color: orange;
+h1, h2{
+  text-align:center;
 }
 
-.even {
-    background-color: lightblue;
+h1{
+  color:rgba(100, 50, 255, .8);
+  font-family: 'Pacifico', cursive;
+  color:#212121;
 }
 
+.rainbow {
 
-/*# sourceMappingURL=styles.css.map */
+   /* Font options */
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px 4px #000000;
+  font-size:40px;
+  text-align: center;
+
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite;
+
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+
+  /* Standar Syntax */
+  animation: rainbow 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+  0%{color: orange;}
+  10%{color: purple;}
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+   0%{color: orange;}
+  10%{color: purple;}
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Standar Syntax */
+@keyframes rainbow{
+    0%{color: orange;}
+  10%{color: purple;}
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #17a2b8;
+  height: 100vh;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}

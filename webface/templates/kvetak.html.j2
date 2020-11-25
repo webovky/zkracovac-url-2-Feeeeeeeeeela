@@ -1,0 +1,8 @@
+{% extends "base.html.j2" %}
+
+{% block obsah %}
+<div class="hlavnitext"> <p>Zde jest květák. Je jich opravdu hodně, snad se najde nějaký vegan, co by je všechny pojmul.</p></div>
+{% for jo in range(20) %}
+<img src="{{url_for('static', filename='kvetak.jpg')}}" alt="Květák" class="centering" width={{200+(40*jo)}} height={{200+(40*jo)}}>
+{%endfor%}
+{% endblock obsah %}
