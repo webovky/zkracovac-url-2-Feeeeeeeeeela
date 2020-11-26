@@ -1,7 +1,8 @@
 # formulare-Feeeeeeeeeela
 
 ## Updates:
-* vyřešen error v loginu bez zadání jména
+* registrace errorové hlášky
+* vyřešen error v loginu a registrace bez zadání jména
 * již funguje systém registrace a přihlášení, které se ukládá do databáze
 * bez přihlášení funguje base a info
 
