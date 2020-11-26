@@ -62,17 +62,18 @@ def login():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
-        user = User.get(login=username)
-        if user:
-            if check_password_hash(user.password, password):
-                session["user"] = user.login
-                return redirect(url_for("index"))
+        if username != "":
+            user = User.get(login=username)
+            if user:
+                if check_password_hash(user.password, password):
+                    session["user"] = user.login
+                    return redirect(url_for("index"))
+                else:
+                    return render_template('login.html.j2', title=title, error="Špatné heslo!")
             else:
-                return render_template('login.html.j2', title=title, error="Špatný heslo kolego")
-
+                return render_template('login.html.j2', title=title, error="Špatné jméno!")
         else:
-            return render_template('login.html.j2', title=title, error="Špatný jméno kolego")
-
+            return render_template('login.html.j2', title=title, error="Neplatné jméno!")
 
     return render_template('login.html.j2', title=title)
 
@@ -98,11 +99,17 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         password2 = request.form.get("password2")
-        existing = User.get(login=username)
-        if username and not existing and password == password2:
-            user = User(login=username,password=generate_password_hash(password))
-            session["user"] = user.login
-            return redirect(url_for("index"))
+        if username != "":
+            existing = User.get(login=username)
+            if username:
+                if password != password2:
+                    return render_template("register.html.j2", error="Hesla nejsou stejná!")
+                elif existing:
+                    return render_template("register.html.j2", error="Uživatelské jméno již existuje!")
+                else:
+                    user = User(login=username,password=generate_password_hash(password))
+                    session["user"] = user.login
+                    return redirect(url_for("index"))
         else:
             return render_template("register.html.j2", error="Máš tam chybu")
 
