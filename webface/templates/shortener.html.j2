@@ -1,0 +1,15 @@
+{% extends "base.html.j2" %}
+
+{% block obsah %}
+<form action="" method="POST">
+<div class="col-md-7 centering">
+ <h1 class="display-1">Zkracovač:</h1>
+ <br>
+ <input class="form-control form-control-lg text-center bg-dark text-light" type="text" placeholder="URL..." name = "url">
+ <br>
+ <input class="btn btn-info btn-block col-md-3 centering bg-success" type="submit" value="Zkrať to">
+ <br>
+ <label for="disabledTextInput" class="form-control text-center bg-secondary text-white">{{urlhex}}</label>
+</div>
+</form>
+{% endblock obsah %}

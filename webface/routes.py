@@ -2,9 +2,9 @@ from . import app
 from flask import render_template, request, session, redirect, url_for, g
 from os import urandom
 from pony.orm import db_session
-from . models import User
+from . models import User, Shortener
 from werkzeug.security import check_password_hash, generate_password_hash
-
+from secrets import token_hex
 
 @app.route('/')
 def index():
@@ -121,6 +121,28 @@ def logout():
     session["user"] = ""
     return redirect(url_for("index"))
 
-@app.route("/short", methods=["GET","POST"])
-def short():
-    pass
+
+@app.route("/Zkracovač", methods=["GET","POST"])
+@db_session
+def shortener():
+    if g.user:
+        title = "Zkracovač"
+        urlhex = ""
+        if request.method == "POST":
+            url = request.form.get("url")
+            if url != "":
+                existing = Shortener.get(url=url)
+                if not existing:
+                    shortened = Shortener(shortcut=token_hex(3), url=url)
+                else:
+                    shortened = existing
+                urlhex = f"{request.url}/{shortened.shortcut}"
+
+        return render_template('shortener.html.j2', title=title, urlhex = urlhex)
+    return redirect(url_for('login'))
+
+@app.route("/Zkracovač/<string:shortcut>")
+@db_session
+def redirectshortcut(shortcut):
+    url = Shortener.get(shortcut=shortcut).url
+    return redirect(url)
