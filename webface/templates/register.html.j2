@@ -3,25 +3,27 @@
 </head>
 
 
-<form class="text-center border border-light p-5" action="{{url_for('login')}}" method="POST">
+<form class="text-center border border-light p-5" action="{{url_for('register')}}" method="POST">
 
-    <p class="h4 mb-4">Přihlášení</p>
+    <p class="h4 mb-4">Registrace</p>
 
     <input type="text" name="username" class="form-control mb-4" placeholder="Jméno:">
 
     <!-- Password -->
     <input type="password" name="password" class="form-control mb-4" placeholder="Heslo:">
 
+    <input type="password" name="password2" class="form-control mb-4" placeholder="Heslo:">
+
 
     <!-- Sign in button -->
-    <input class="btn btn-info btn-block my-4" type="submit" value="Přihlášení">
+    <input class="btn btn-info btn-block my-4" type="submit" value="Registrace">
     <div>
          <p>{{error}}</p>
         </div>
 
     <!-- Register -->
-    <p>Nemáš účet?
-        <a href="{{url_for('register')}}">Registrace</a>
+    <p>Již máš účet?
+        <a href="{{url_for('login')}}">Přihlášení</a>
     </p>
 
     <!-- Social login -->

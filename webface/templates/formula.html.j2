@@ -1,0 +1,13 @@
+{% extends "base.html.j2" %}
+{% block obsah %}
+<h1 class="centering">Kalkulačka</h1>
+<p class="centering">využívající funkce eval().</p>
+<form class="centering" action="{{url_for('formulky')}}" method="POST">
+    <input class="text-right" type="text" name="text">
+    <input type="submit" value="Enter">
+</form>
+<h3 class="centering">
+{{result}}
+</h3>
+
+{% endblock obsah %}
